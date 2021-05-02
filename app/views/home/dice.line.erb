@@ -1,20 +1,18 @@
 <%= raw(Kamiflex.build(self) do
-  alt_text "#{@dices.join(", ")}"
+  alt_text "#{params.dig(:profile, :displayName)}骰出的結果：#{@dices.sum}"
   bubble do
     body do
-      text "骰子 不用謝 - 使用說明", weight: :bold, size: :sm, margin: :md
-      separator
-      text "說出幾個「骰」字就可以丟出幾顆骰子。", size: :sm, color: "#666666", margin: :md
-      horizontal_box do
+      text "#{params.dig(:profile, :displayName)}骰出的結果：#{@dices.sum}", weight: :bold, size: :sm
+      horizontal_box margin: :md do
         @dices.each_with_index do |dice, index|
-          image "https://ngrok.etrex.tw/images/dice/#{(index+1)%2}/"
+          image "https://ngrok.etrex.tw/images/dice/#{index%2+1}/#{dice}.png"
         end
       end
-      separator
-      text "可點擊以下圖示丟骰", size: :sm, color: "#666666", margin: :md
+      separator color: "#cccccc", margin: :lg
+      text "點擊以下圖示擲骰", weight: :bold, size: :sm, margin: :lg
       horizontal_box do
-        message_button "丟 1 顆骰", "骰", style: :primary, margin: :md
-        message_button "丟 2 顆骰", "骰骰", style: :primary, margin: :md
+        image "https://ngrok.etrex.tw/images/button_1.png", action: message_action("骰")
+        image "https://ngrok.etrex.tw/images/button_2.png", action: message_action("骰骰")
       end
     end
   end

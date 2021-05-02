@@ -1,13 +1,11 @@
 <%= raw(Kamiflex.build(self) do
-  alt_text "骰子 不用謝 - 使用說明"
+  alt_text "骰子 不用謝：點擊以下圖示擲骰："
   bubble do
     body do
-      text "骰子 不用謝 - 使用說明", weight: :bold, size: :sm, margin: :md
-      separator
-      text "說出幾個「骰」字就可以丟出幾顆骰子。", size: :sm, color: "#666666", margin: :md
+      text "點擊以下圖示擲骰", weight: :bold, size: :sm
       horizontal_box margin: :md do
-        message_button "丟 1 顆骰", "骰", style: :primary, margin: :md
-        message_button "丟 2 顆骰", "骰骰", style: :primary, margin: :md
+        image "https://ngrok.etrex.tw/images/button_1.png", action: message_action("骰")
+        image "https://ngrok.etrex.tw/images/button_2.png", action: message_action("骰骰")
       end
     end
   end

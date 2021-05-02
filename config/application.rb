@@ -20,5 +20,6 @@ module DiceDontThanks
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.hosts << "ngrok.etrex.tw"
+    config.hosts << "dice-dont-thanks.herokuapp.com"
   end
 end

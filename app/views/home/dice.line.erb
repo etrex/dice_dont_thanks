@@ -6,8 +6,9 @@
       separator
       text "說出幾個「骰」字就可以丟出幾顆骰子。", size: :sm, color: "#666666", margin: :md
       horizontal_box do
-        image "https://www.kamigo.tw/assets/kamigo-c3b10dff4cdb60fa447496b22edad6c32fffde96de20262efba690892e4461e8.png"
-        image "https://www.kamigo.tw/assets/kamigo-c3b10dff4cdb60fa447496b22edad6c32fffde96de20262efba690892e4461e8.png"
+        @dices.each_with_index do |dice, index|
+          image "https://ngrok.etrex.tw/images/dice/#{(index+1)%2}/"
+        end
       end
       separator
       text "可點擊以下圖示丟骰", size: :sm, color: "#666666", margin: :md

@@ -1,0 +1,20 @@
+<%= raw(Kamiflex.build(self) do
+  alt_text "#{@dices.join(", ")}"
+  bubble do
+    body do
+      text "骰子 不用謝 - 使用說明", weight: :bold, size: :sm, margin: :md
+      separator
+      text "說出幾個「骰」字就可以丟出幾顆骰子。", size: :sm, color: "#666666", margin: :md
+      horizontal_box do
+        image "https://www.kamigo.tw/assets/kamigo-c3b10dff4cdb60fa447496b22edad6c32fffde96de20262efba690892e4461e8.png"
+        image "https://www.kamigo.tw/assets/kamigo-c3b10dff4cdb60fa447496b22edad6c32fffde96de20262efba690892e4461e8.png"
+      end
+      separator
+      text "可點擊以下圖示丟骰", size: :sm, color: "#666666", margin: :md
+      horizontal_box do
+        message_button "丟 1 顆骰", "骰", style: :primary, margin: :md
+        message_button "丟 2 顆骰", "骰骰", style: :primary, margin: :md
+      end
+    end
+  end
+end) %>

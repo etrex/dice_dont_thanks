@@ -1,0 +1,14 @@
+<%= raw(Kamiflex.build(self) do
+  alt_text "骰子 不用謝 - 使用說明"
+  bubble do
+    body do
+      text "骰子 不用謝 - 使用說明", weight: :bold, size: :sm, margin: :md
+      separator
+      text "說出幾個「骰」字就可以丟出幾顆骰子。", size: :sm, color: "#666666", margin: :md
+      horizontal_box margin: :md do
+        message_button "丟 1 顆骰", "骰", style: :primary, margin: :md
+        message_button "丟 2 顆骰", "骰骰", style: :primary, margin: :md
+      end
+    end
+  end
+end) %>

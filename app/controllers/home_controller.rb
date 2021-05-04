@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   end
 
   def dice
-    dice_count = params[:dice]&.length || 0
-    dice_count += 1
-    @dices = (1..dice_count).map{|i| rand(1..6) }
+    message = params[:message] || '骰'
+    if message.length == message.count('骰') && message.length <= 10
+      return @dices = (1..message.length).map{|i| rand(1..6) }
+    end
   end
 end

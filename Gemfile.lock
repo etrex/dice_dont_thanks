@@ -93,7 +93,7 @@ GEM
     json (2.5.1)
     kamiflex (0.12.2)
       json
-    kamigo (0.21.0)
+    kamigo (0.22.0)
       kamiflex (~> 0.11, >= 0.11.0)
       kamiliff (~> 0.25, >= 0.25.0)
       line-bot-api (~> 1.5)
@@ -222,7 +222,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   dotenv-rails (~> 2.7)
   jbuilder (~> 2.7)
-  kamigo (~> 0.21.0)
+  kamigo (~> 0.22.0)
   listen (~> 3.3)
   pg
   puma (~> 5.0)

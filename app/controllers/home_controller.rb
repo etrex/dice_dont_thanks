@@ -8,4 +8,9 @@ class HomeController < ApplicationController
       return @dices = (1..message.length).map{|i| rand(1..6) }
     end
   end
+
+  def dice666
+    @dices = [6,6,6]
+    render :dice
+  end
 end

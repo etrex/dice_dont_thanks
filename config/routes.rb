@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "說明", to: "home#index"
   get "骰子", to: "home#index"
   get "骰(*dice)",to: "home#dice"
+  get "!666",to: "home#dice666"
 end

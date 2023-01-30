@@ -21,7 +21,6 @@ module DiceDontThanks
 
     config.hosts << "ngrok.etrex.tw"
     config.hosts << "dice-dont-thanks.herokuapp.com"
-    config.hosts << "dice-dont-thanks.vercel.app"
 
   end
 end

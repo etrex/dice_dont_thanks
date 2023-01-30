@@ -78,6 +78,8 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    dockerfile-rails (1.0.1)
+      rails
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -212,6 +214,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  dockerfile-rails (>= 1.0.0)
   dotenv-rails (~> 2.7)
   jbuilder (~> 2.7)
   kamigo (~> 0.22.0)

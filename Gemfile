@@ -58,3 +58,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "kamigo", "~> 0.22.0"
 
 gem "dotenv-rails", "~> 2.7"
+
+gem "dockerfile-rails", ">= 1.0.0", :group => :development

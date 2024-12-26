@@ -137,9 +137,18 @@ function reply666Result(event) {
   const dices = [6, 6, 6];
   const sum = 18;
   
+  // 取得用戶名稱
+  let displayName = '';
+  if (event.source.userId) {
+    const profile = getUserProfile(event.source.userId);
+    if (profile) {
+      displayName = profile.displayName;
+    }
+  }
+  
   const flexMessage = {
     type: 'flex',
-    altText: `${event.source.userId} 骰出的結果：${sum}`,
+    altText: `${displayName || '某人'} 骰出的結果：${sum}`,
     contents: {
       type: 'bubble',
       body: {
@@ -148,7 +157,7 @@ function reply666Result(event) {
         contents: [
           {
             type: 'text',
-            text: `骰出的結果：${sum}`,
+            text: `${displayName ? displayName + ' 骰出的結果：' : '骰出的結果：'}${sum}`,
             weight: 'bold',
             size: 'sm'
           },
@@ -208,6 +217,22 @@ function isValidDiceCommand(message) {
   return message.split('').every(char => char === '骰');
 }
 
+// 取得用戶名稱
+function getUserProfile(userId) {
+  const url = `https://api.line.me/v2/bot/profile/${userId}`;
+  const headers = {
+    'Authorization': 'Bearer ' + CHANNEL_ACCESS_TOKEN
+  };
+  
+  try {
+    const response = UrlFetchApp.fetch(url, { headers: headers });
+    return JSON.parse(response.getContentText());
+  } catch (error) {
+    console.error('Error getting user profile:', error);
+    return null;
+  }
+}
+
 // 擲骰子並產生回應
 function replyDiceResult(event) {
   // 限制骰子數量最多為 10
@@ -215,10 +240,19 @@ function replyDiceResult(event) {
   const dices = Array.from({length: diceCount}, () => Math.floor(Math.random() * 6) + 1);
   const sum = dices.reduce((a, b) => a + b, 0);
   
-  // 建 LINE Flex Message
+  // 取得用戶名稱
+  let displayName = '';
+  if (event.source.userId) {
+    const profile = getUserProfile(event.source.userId);
+    if (profile) {
+      displayName = profile.displayName;
+    }
+  }
+  
+  // 建立 LINE Flex Message
   const flexMessage = {
     type: 'flex',
-    altText: `${event.source.userId} 骰出的結果：${sum}`,
+    altText: `${displayName || '某人'} 骰出的結果：${sum}`,
     contents: {
       type: 'bubble',
       body: {
@@ -227,7 +261,7 @@ function replyDiceResult(event) {
         contents: [
           {
             type: 'text',
-            text: `骰出的結果：${sum}`,
+            text: `${displayName ? displayName + ' 骰出的結果：' : '骰出的結果：'}${sum}`,
             weight: 'bold',
             size: 'sm'
           },
@@ -279,7 +313,6 @@ function replyDiceResult(event) {
     }
   };
 
-  // 發送訊息
   return replyMessage(event.replyToken, flexMessage);
 }
 

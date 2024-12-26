@@ -1,7 +1,7 @@
 // LINE Messaging API 的設定
 const CHANNEL_ACCESS_TOKEN = 'YOUR_CHANNEL_ACCESS_TOKEN';
 const CHANNEL_SECRET = 'YOUR_CHANNEL_SECRET';
-const GITHUB_PAGES_URL = 'YOUR_GITHUB_PAGES_URL';
+const GITHUB_PAGES_URL = 'dice.kamigo.tw';
 
 // 處理 POST 請求
 function doPost(e) {

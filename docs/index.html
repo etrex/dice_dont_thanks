@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>骰子不用謝 - 最簡單的 LINE 骰子機器人</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <style>
         .author-info {
             margin-top: 10px;
@@ -20,13 +21,25 @@
             color: #fff;
             text-decoration: underline;
         }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="container">
-                <h1>骰子不用謝</h1>
+                <div class="nav-brand">
+                    <img src="images/logo.png" alt="骰子不用謝 Logo">
+                    <h1>骰子不用謝</h1>
+                </div>
                 <ul>
                     <li><a href="#features">功能介紹</a></li>
                     <li><a href="#usage">使用說明</a></li>

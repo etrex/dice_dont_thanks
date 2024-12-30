@@ -240,6 +240,33 @@ html {
 }
 
 /* 為了補償固定導航欄的高度，讓錨點位置更準確 */
-#features, #usage, #demo {
+#features, #usage, #demo, #contact {
     scroll-margin-top: 80px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.contact-text {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.contact-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+#contact .cta-button {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#contact .button {
+    font-size: 1.1rem;
 } 

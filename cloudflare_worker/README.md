@@ -1,6 +1,6 @@
-# Dice Don't Thanks - Cloudflare Function
+# Dice Don't Thanks - Cloudflare Worker
 
-這是「骰子不用謝」LINE Bot 的 Cloudflare Function 版本。
+這是「骰子不用謝」LINE Bot 的 Cloudflare Worker 版本。
 
 ## 部署後的 Webhook URL
 
